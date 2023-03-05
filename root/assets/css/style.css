@@ -13,6 +13,10 @@
     --bg-color: #fff;
     --heading-color: #292922;
     --div-bg: #b5d4ff;
+    --content-width: 960px;
+    --content-width--small: 560px;
+    --content-width--medium: 700px;
+    --transition-time: 0.5s ease-out;
 }
 
 [data-theme="dark"] {
@@ -22,6 +26,10 @@
     --bg-color: #161625;
     --heading-color: #818cab;
     --div-bg: #373761;
+    --content-width: 960px;
+    --content-width--small: 560px;
+    --content-width--medium: 700px;
+    --transition-time: 0.5s ease-out;
 }
 
 body {
@@ -31,6 +39,7 @@ body {
     max-width: 100%;
     margin: 0 auto;
     font-size: calc(1rem + 0.25vh);
+    transition: background-color var(--transition-time);
 }
 
 h1 {
@@ -38,11 +47,14 @@ h1 {
     font-family: 'Circular Std', sans-serif;
     font-size: 2rem;
     margin-bottom: 1vh;
+    transition: color var(--transition-time);
 }
 
 p {
     font-size: 1.1rem;
     line-height: 1.6rem;
+    color: var(--font-color);
+    transition: color var(--transition-time);
 }
 
 a {
@@ -50,6 +62,7 @@ a {
     text-decoration: none;
     border-bottom: 3px solid transparent;
     font-weight: bold;
+    transition: color var(--transition-time);
 }
 
 a:hover,
@@ -68,6 +81,7 @@ section {
     display: block;
     margin-bottom: 4vh;
     color: var(--secondary-color);
+    transition: color var(--transition-time);
 }
 
 nav#theme-switch-nav {
@@ -112,11 +126,26 @@ input[type="checkbox"][id="theme-switch-button"] {
     z-index: -1;
 }
 
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: #fff;
+    inherits: false;
+}
+
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: #b5d4ff;
+    inherits: false;
+}
+
 #main-menu {
+    --myColor1: var(--bg-color);
+    --myColor2: var(--div-bg);
     display: block;
     height: 80px;
     width: 100%;
-    background: linear-gradient(to top, var(--bg-color),var(--div-bg));
+    background: linear-gradient(to top, var(--myColor1), var(--myColor2));
+    transition: --myColor1 var(--transition-time), --myColor2 var(--transition-time);
     margin: 0px;
     z-index: 9;
 }
@@ -144,12 +173,14 @@ input[type="checkbox"][id="theme-switch-button"] {
     color: var(--font-color);
     font-size: 1.5rem;
     text-decoration: none;
+    transition: color var(--transition-time);
 }
 
 #main-menu a:hover {
     text-decoration: underline;
 }
-#main-menu a.active{
+
+#main-menu a.active {
     text-decoration: underline;
 }
 
@@ -161,22 +192,35 @@ input[type="checkbox"][id="theme-switch-button"] {
     position: fixed;
     top: 20px;
     left: 20px;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     display: none;
     border: none;
     padding: 0px;
     margin: 0px;
     font-family: 'Circular Std', sans-serif;
-    background: linear-gradient(to bottom,
-            var(--div-bg), var(--div-bg) 20%,
-            var(--bg-color) 20%, var(--bg-color) 40%,
-            var(--div-bg) 40%, var(--div-bg) 60%,
-            var(--bg-color) 60%, var(--bg-color) 80%,
-            var(--div-bg) 80%, var(--div-bg) 100%);
 }
 
+div#hamburger-menu-bars {
+    width: 35px;
+    height: 5px;
+    background-color: var(--div-bg);
+    margin: 6px 0;
+    transition: background-color var(--transition-time);
+}
+
+
+/* --myColor1: var(--bg-color);
+--myColor2: var(--div-bg);
+display: block;
+height: 80px;
+width: 100%;
+background: linear-gradient(to top, var(--myColor1), var(--myColor2));
+transition: --myColor1 var(--transition-time), --myColor2 var(--transition-time); */
+
 #hamburger-menu #sidebar-menu {
+    --myColor1: var(--bg-color);
+    --myColor2: var(--div-bg);
     visibility: hidden;
     position: fixed;
     top: 0;
@@ -184,8 +228,8 @@ input[type="checkbox"][id="theme-switch-button"] {
     width: 200px;
     height: 100%;
     /* background-color: var(--div-bg); */
-    background: linear-gradient(to left,var(--bg-color),var(--div-bg));
-    transition: 0.5s;
+    background: linear-gradient(to left, var(--myColor1), var(--myColor2));
+    transition: --myColor1 var(--transition-time), --myColor2 var(--transition-time);
     padding: 0px 20px;
     box-sizing: border-box;
 }
@@ -193,6 +237,7 @@ input[type="checkbox"][id="theme-switch-button"] {
 #hamburger-menu h3 {
     color: var(--font-color);
     font-size: 2.2rem;
+    transition: color var(--transition-time);
 }
 
 #hamburger-menu ul {
@@ -233,4 +278,23 @@ input[type="checkbox"][id="theme-switch-button"] {
     #hamburger-menu {
         display: inline;
     }
+}
+
+/* Main Page content */
+div.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--content-width);
+    padding: 0 2rem;
+}
+
+div.head-wrapper {
+    align-items: center;
+    gap: 2rem;
+    grid-template-columns: 4fr 1fr;
+    display: grid;
+}
+
+main {
+    margin-top: 30px;
 }

@@ -1,8 +1,6 @@
 const toggleSwitch = document.getElementById('theme-switch-button');
-// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-console.log("toggle", toggleSwitch)
 const currentTheme = localStorage.getItem('theme');
-console.log("currentTheme", currentTheme)
+
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -34,7 +32,6 @@ function switchTheme(e) {
         document.getElementById('theme-image').src = "/root/assets/images/ThemeSwitcher/moon.png"
 
         var elms = document.querySelectorAll("#link-image")
-        console.log(elms)
         for (var i = 0; i < elms.length; i++)
             elms[i].src = "/root/assets/images/Links/external-link-black.png"
 
