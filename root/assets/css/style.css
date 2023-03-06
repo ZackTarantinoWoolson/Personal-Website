@@ -99,10 +99,16 @@ nav#theme-switch-nav {
     padding-right: 30px;
 }
 
-.topcorner {
+.top-right-corner {
     position: fixed;
     top: 20px;
     right: 0;
+}
+
+.top-left-corner {
+    position: fixed;
+    top: 0px;
+    left: 30px;
 }
 
 /* Switcher Button */
