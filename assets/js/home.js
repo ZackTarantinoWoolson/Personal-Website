@@ -7,11 +7,11 @@ if (currentTheme) {
 
     if (currentTheme === 'dark') {
         toggleSwitch.checked = true;
-        document.getElementById('theme-image').src = "/root/assets/images/ThemeSwitcher/sunny.png"
+        document.getElementById('theme-image').src = "/assets/images/ThemeSwitcher/sunny.png"
 
         var elms = document.querySelectorAll("#link-image")
         for (var i = 0; i < elms.length; i++)
-            elms[i].src = "/root/assets/images/Links/external-link-white.png"
+            elms[i].src = "/assets/images/Links/external-link-white.png"
     }
 }
 
@@ -19,21 +19,21 @@ function switchTheme(e) {
     console.log("switch");
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        document.getElementById('theme-image').src = "/root/assets/images/ThemeSwitcher/sunny.png"
+        document.getElementById('theme-image').src = "/assets/images/ThemeSwitcher/sunny.png"
 
         var elms = document.querySelectorAll("#link-image")
         for (var i = 0; i < elms.length; i++)
-            elms[i].src = "/root/assets/images/Links/external-link-white.png"
+            elms[i].src = "/assets/images/Links/external-link-white.png"
 
         localStorage.setItem('theme', 'dark');
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
-        document.getElementById('theme-image').src = "/root/assets/images/ThemeSwitcher/moon.png"
+        document.getElementById('theme-image').src = "/assets/images/ThemeSwitcher/moon.png"
 
         var elms = document.querySelectorAll("#link-image")
         for (var i = 0; i < elms.length; i++)
-            elms[i].src = "/root/assets/images/Links/external-link-black.png"
+            elms[i].src = "/assets/images/Links/external-link-black.png"
 
         localStorage.setItem('theme', 'light');
     }
