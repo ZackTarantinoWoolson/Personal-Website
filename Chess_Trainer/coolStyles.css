@@ -1,0 +1,78 @@
+:root {
+    --green: #119e4e;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    border: 1px solid black;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none !important;
+}
+
+button#start {
+    width: 100px;
+    height: 60px;
+    background: var(--green);
+    border: 1px solid black !important;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+td[id*='7']:nth-child(even),
+td[id*='5']:nth-child(even),
+td[id*='3']:nth-child(even),
+td[id*='1']:nth-child(even) {
+    background-color: var(--green);
+}
+
+td[id*='8']:nth-child(odd),
+td[id*='6']:nth-child(odd),
+td[id*='4']:nth-child(odd),
+td[id*='2']:nth-child(odd) {
+    background-color: var(--green);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column {
+    flex-basis: 48%;
+    margin-bottom: 1em;
+}
+
+#countdown {
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-size: 15em;
+    z-index: 9999;
+}
+#inner_div{
+    padding-left: 50%;
+    /* padding-top: 20%; */
+}
+
+#chessboard {
+    position: absolute;
+    text-align: center; 
+}
