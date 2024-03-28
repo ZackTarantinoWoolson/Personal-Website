@@ -16,9 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
             content.appendChild(img);
             lightbox.appendChild(content);
             document.body.appendChild(lightbox);
+
+            document.body.style.overflow = 'hidden'; // Disable scrolling
             
             lightbox.addEventListener('click', function () {
                 document.body.removeChild(lightbox);
+                document.body.style.overflow = ''; // Enable scrolling
             });
         });
     });
