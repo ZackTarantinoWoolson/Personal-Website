@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/assets/images/FaviconWeb/icons8-administrator-male-ios-16-96.png" type="image/x-icon">
+</head>
+<body>
+    <nav id="main-menu">
+        <ul>
+            <li><a href="/home.html">
+                    < />
+                </a></li>
+            <li><a href="/me.html">About Me</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/creative.html" class="active">Creative</a></li>
+            <li><a href="https://github.com/ZackTarantinoWoolson" target="_blank">GitHub <img
+                        src="/assets/images/Links/external-link-black.png" width="25px" id="link-image" /></a></li>
+            <li><a href="https://www.linkedin.com/in/zacktarantino/" target="_blank">LinkedIn <img
+                        src="/assets/images/Links/external-link-black.png" width="25px" id="link-image" /></a></li>
+        </ul>
+    </nav>
+
+
+    <input type="checkbox" id="hamburger-input" class="burger-shower" />
+    <label id="hamburger-menu" for="hamburger-input">
+        <div id="hamburger-menu-bars"></div>
+        <div id="hamburger-menu-bars"></div>
+        <div id="hamburger-menu-bars"></div>
+        
+        <nav id="sidebar-menu">
+            <h3>X</h3>
+
+            <ul>
+                <li><a href="/home.html">
+                        < />
+                    </a></li>
+                <li><a href="/me.html">About Me</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/creative.html" class="active">Creative</a></li>
+                <li><a href="https://github.com/ZackTarantinoWoolson" target="_blank">GitHub <img
+                            src="/assets/images/Links/external-link-black.png" width="25px" id="link-image" /></a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/zacktarantino/" target="_blank">LinkedIn <img
+                            src="/assets/images/Links/external-link-black.png" width="25px" id="link-image" /></a>
+                </li>
+            </ul>
+        </nav>
+    </label>
+    <div class="overlay"></div>
+
+    <nav id="theme-switch-nav">
+        <div class="theme-switch-wrapper top-right-corner">
+            <input type="checkbox" id="theme-switch-button" />
+            <label for="theme-switch-button">
+                <img src="/assets/images/ThemeSwitcher/moon.png" id="theme-image" width="30px" />
+            </label>
+        </div>
+    </nav>
+
+    <div class="image-grid">
+        <div class="grid-item"><img src="/assets/images/NewYorkMar24/000059450001-final.png" alt="Image 1"></div>
+        <div class="grid-item"><img src="/assets/images/NewYorkMar24/000059450003-final.jpg" alt="Image 2"></div>
+        <div class="grid-item"><img src="/assets/images/NewYorkMar24/000059450006-final.jpg" alt="Image 3"></div>
+        <div class="grid-item"><img src="/assets/images/NewYorkMar24/000059450009-final.jpg" alt="Image 4"></div>
+        <div class="grid-item"><img src="/assets/images/NewYorkMar24/000059450010-final.jpg" alt="Image 5"></div>
+        <div class="grid-item"><img src="/assets/images/NewYorkMar24/000059450011-final.jpg" alt="Image 6"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="/assets/js/home.js"></script>
+</body>
+</html>
